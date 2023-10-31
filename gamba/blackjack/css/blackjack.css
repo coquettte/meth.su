@@ -1,0 +1,56 @@
+/* (A) ENTIRE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+/* (B) DEALER & PLAYER */
+/* (B1) CONTAINERS */
+#deal-data, #play-data, #deal-cards, #play-cards, #play-control { padding: 20px; }
+#deal-data, #play-data { font-weight: 700; }
+#deal-cards, #play-cards { min-height: 120px; }
+#deal-data { background: #3a3e45; }
+#deal-cards { background: #656d78; }
+#play-data { background: #3a3e45; }
+#play-cards { background: #656d78; }
+#play-control { background: #5a606b; }
+#deal-stand, #play-stand {
+  display: none; padding: 5px;
+  color: #fff; background: #ab2323;
+}
+#deal-stand.stood, #play-stand.stood { display: inline-block; }
+#deal-data, #play-data {color: #ffffff;}
+
+/* (B2) CARDS */
+#deal-cards, #play-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bj-card {
+  display: flex;
+  align-items: center; justify-content: center;
+  margin: 10px;
+  width: 100px; height: 100px;
+  font-size: 2em;
+  text-align: center;
+  background: #fff;
+}
+#deal-first .front { display: none; }
+#deal-first.show .back { display: none; }
+#deal-first.show .front { display: block; }
+
+/* (C) PLAY CONTROLS */
+#play-control input {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 0;
+  color: #fff;
+  background: #7a8291;
+}
+body {
+  background-color: #25282c;
+}
+#playc-hit, #playc-stand { display: none; }
+#play-control.started #playc-start { display: none; }
+#play-control.started #playc-hit, #play-control.started #playc-stand { display: inline-block; }
