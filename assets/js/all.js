@@ -1,5 +1,5 @@
 let counter = 0;
-let Title = 'eth.casino';
+let Title = 'eth.su';
 let direction = true;
 aniTitle = setInterval(function () {
     if (counter == Title.length) direction = false;
