@@ -78,3 +78,16 @@ a:visited {
        transform: translate(-50%, -50%);
        width: fit-content;
 }
+
+@keyframes spin {
+       from {
+              transform: rotateX(0deg);
+       }
+       to {
+              transform: rotateX(359deg);
+       }
+}
+
+.hard-photo {
+       animation: spin 10s infinite;
+}
