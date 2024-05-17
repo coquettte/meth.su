@@ -81,13 +81,19 @@ a:visited {
 
 @keyframes spin {
        from {
-              transform: rotateX(0deg);
+              transform: rotateY(0deg);
        }
+
        to {
-              transform: rotateX(359deg);
+              transform: rotateY(359deg);
        }
 }
 
 .hard-photo {
        animation: spin 10s infinite;
+}
+
+li,
+ul {
+       color: white;
 }
