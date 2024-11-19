@@ -14,17 +14,6 @@
       };
 
       const pick = (array) => array[Math.floor(Math.random() * array.length)];
-      const hacked_statements = [
-        "Yes",
-        "Maybe",
-        "Most Likely",
-        "Highly Probable",
-        "Potentially",
-        "Unlikely But Still Possible",
-        "Almost Certainly",
-        "Definitely",
-        "Absolutely",
-      ];
 
       try {
         const memes = [];
@@ -101,8 +90,8 @@
             "Available Browser Memory",
             typeof window.performance.memory != "undefined"
               ? Math.round(
-                  window.performance.memory.jsHeapSizeLimit / 1024 / 1024
-                )
+                window.performance.memory.jsHeapSizeLimit / 1024 / 1024
+              )
               : null,
             "MB"
           );
@@ -115,7 +104,7 @@
               canvas.getContext("webgl") ||
               canvas.getContext("experimental-webgl");
             debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
-          } catch (e) {}
+          } catch (e) { }
           if (gl && debugInfo) {
             push(
               "GPU Vendor",
@@ -136,9 +125,6 @@
           );
           if (ip_data) push("Timezone", ip_data.timezone);
           push("Timezone Offset", date.getTimezoneOffset() / 60, " hours");
-          push("Hacked", pick(hacked_statements));
-          push("Hacked By", "drifter");
-          push("Current Status", "smoking meth");
         };
 
         start.onclick = async () => {
@@ -152,9 +138,8 @@
             if (step < 0) return clearInterval(interval);
             if (time >= 0) {
               if (step == 0)
-                document.title = `lmao this you? [${
-                  my_ip ? my_ip.YourFuckingIPAddress : "::ffff:172.70.126.134"
-                }]`;
+                document.title = `[${my_ip ? my_ip.YourFuckingIPAddress : "::ffff:172.70.126.134"
+                  }]`;
               const el = document.createElement("span");
               el.textContent = `${memes[step]}`;
               step++;
@@ -243,10 +228,5 @@
   <div id="loading">Loading....</div>
   <div id="start" style="display: none">Click to Start!</div>
   <div id="data"></div>
-  <video
-    id="video"
-    webkit-playsinline
-    playsinline
-    style="display: none; pointer-events: none"
-  ></video>
+  <video id="video" webkit-playsinline playsinline style="display: none; pointer-events: none"></video>
 </body>
